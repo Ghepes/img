@@ -1,7 +1,6 @@
 /**
  * Public Active Codes
 **/
-public function is_license_active() {
-        $isActivated = get_option('wromo_is_activated');
-        return $isActivated;
-    }
+
+if (!$zmw_license->is_license_active()) {
+    add_action('admin_notices', 'zmw_show_license_error');
